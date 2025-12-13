@@ -1,0 +1,63 @@
+# CIGRL Mission Configurations
+# Urban delivery with route deconfliction
+
+mission:
+  type: delivery
+  name: "Multi-Point Urban Delivery"
+  description: "Coordinated package delivery with dynamic route deconfliction"
+
+swarm:
+  num_drones: 8
+  depot_location: [50, 50, 20]
+  
+deliveries:
+  - id: D1
+    pickup: [50, 50, 20]
+    dropoff: [800, 700, 30]
+    priority: high
+    deadline_s: 300
+  - id: D2
+    pickup: [50, 50, 20]
+    dropoff: [600, 200, 25]
+    priority: medium
+    deadline_s: 400
+  - id: D3
+    pickup: [50, 50, 20]
+    dropoff: [300, 800, 35]
+    priority: medium
+    deadline_s: 350
+  - id: D4
+    pickup: [50, 50, 20]
+    dropoff: [900, 400, 40]
+    priority: low
+    deadline_s: 500
+
+environment:
+  size: 1000
+  no_fly_zones:
+    - bounds: [400, 400, 500, 500]
+      type: restricted
+  gps_denied_zones:
+    - bounds: [200, 300, 350, 500]
+      severity: 0.85
+    - bounds: [550, 100, 700, 250]
+      severity: 0.75
+
+routing:
+  deconfliction:
+    method: "cooperative"
+    lookahead_s: 10
+    separation_m: 15
+  altitude_stratification:
+    enabled: true
+    layers: [25, 35, 45, 55]
+
+safety:
+  min_separation: 8
+  max_speed: 10.0
+  battery_reserve_percent: 20
+
+communication:
+  range: 200
+  update_rate_hz: 5
+  priority_messaging: true

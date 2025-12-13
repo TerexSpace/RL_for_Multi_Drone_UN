@@ -1,0 +1,726 @@
+{
+  "baseline": {
+    "5_delivery_42": {
+      "completion_rate": 0.0,
+      "trajectory_deviation": -0.6564124940037038,
+      "collisions": 0,
+      "near_misses": 7,
+      "reward": -14224.47724965697
+    },
+    "5_delivery_123": {
+      "completion_rate": 0.0,
+      "trajectory_deviation": -0.6564124940037038,
+      "collisions": 0,
+      "near_misses": 7,
+      "reward": -14224.47724965697
+    },
+    "5_delivery_456": {
+      "completion_rate": 0.0,
+      "trajectory_deviation": -0.6564124940037038,
+      "collisions": 0,
+      "near_misses": 7,
+      "reward": -14224.47724965697
+    },
+    "5_surveillance_42": {
+      "completion_rate": 0.2,
+      "trajectory_deviation": 0.12564367699589565,
+      "collisions": 0,
+      "near_misses": 0,
+      "reward": -4641.3365260597575
+    },
+    "5_surveillance_123": {
+      "completion_rate": 0.2,
+      "trajectory_deviation": 0.12564367699589565,
+      "collisions": 0,
+      "near_misses": 0,
+      "reward": -4641.3365260597575
+    },
+    "5_surveillance_456": {
+      "completion_rate": 0.2,
+      "trajectory_deviation": 0.12564367699589565,
+      "collisions": 0,
+      "near_misses": 0,
+      "reward": -4641.3365260597575
+    },
+    "5_formation_42": {
+      "completion_rate": 0.0,
+      "trajectory_deviation": -0.6640353190795114,
+      "collisions": 0,
+      "near_misses": 0,
+      "reward": -14535.666675854003
+    },
+    "5_formation_123": {
+      "completion_rate": 0.0,
+      "trajectory_deviation": -0.6640353190795114,
+      "collisions": 0,
+      "near_misses": 0,
+      "reward": -14535.666675854003
+    },
+    "5_formation_456": {
+      "completion_rate": 0.0,
+      "trajectory_deviation": -0.6640353190795114,
+      "collisions": 0,
+      "near_misses": 0,
+      "reward": -14535.666675854003
+    },
+    "5_canyon_transit_42": {
+      "completion_rate": 0.0,
+      "trajectory_deviation": -0.7214107876071727,
+      "collisions": 0,
+      "near_misses": 0,
+      "reward": -17739.22600460798
+    },
+    "5_canyon_transit_123": {
+      "completion_rate": 0.0,
+      "trajectory_deviation": -0.7214107876071727,
+      "collisions": 0,
+      "near_misses": 0,
+      "reward": -17739.22600460798
+    },
+    "5_canyon_transit_456": {
+      "completion_rate": 0.0,
+      "trajectory_deviation": -0.7214107876071727,
+      "collisions": 0,
+      "near_misses": 0,
+      "reward": -17739.22600460798
+    },
+    "10_delivery_42": {
+      "completion_rate": 0.0,
+      "trajectory_deviation": -0.6462935104517977,
+      "collisions": 0,
+      "near_misses": 7,
+      "reward": -27323.01155634825
+    },
+    "10_delivery_123": {
+      "completion_rate": 0.0,
+      "trajectory_deviation": -0.6462935104517977,
+      "collisions": 0,
+      "near_misses": 7,
+      "reward": -27323.01155634825
+    },
+    "10_delivery_456": {
+      "completion_rate": 0.0,
+      "trajectory_deviation": -0.6462935104517977,
+      "collisions": 0,
+      "near_misses": 7,
+      "reward": -27323.01155634825
+    },
+    "10_surveillance_42": {
+      "completion_rate": 0.2,
+      "trajectory_deviation": 0.05041782395219011,
+      "collisions": 0,
+      "near_misses": 0,
+      "reward": -10306.101993807813
+    },
+    "10_surveillance_123": {
+      "completion_rate": 0.2,
+      "trajectory_deviation": 0.05041782395219011,
+      "collisions": 0,
+      "near_misses": 0,
+      "reward": -10306.101993807813
+    },
+    "10_surveillance_456": {
+      "completion_rate": 0.2,
+      "trajectory_deviation": 0.05041782395219011,
+      "collisions": 0,
+      "near_misses": 0,
+      "reward": -10306.101993807813
+    },
+    "10_formation_42": {
+      "completion_rate": 0.0,
+      "trajectory_deviation": -0.6531975290512749,
+      "collisions": 0,
+      "near_misses": 0,
+      "reward": -28290.01328946024
+    },
+    "10_formation_123": {
+      "completion_rate": 0.0,
+      "trajectory_deviation": -0.6531975290512749,
+      "collisions": 0,
+      "near_misses": 0,
+      "reward": -28290.01328946024
+    },
+    "10_formation_456": {
+      "completion_rate": 0.0,
+      "trajectory_deviation": -0.6531975290512749,
+      "collisions": 0,
+      "near_misses": 0,
+      "reward": -28290.01328946024
+    },
+    "10_canyon_transit_42": {
+      "completion_rate": 0.0,
+      "trajectory_deviation": -0.7184601787448002,
+      "collisions": 0,
+      "near_misses": 0,
+      "reward": -35020.500050478506
+    },
+    "10_canyon_transit_123": {
+      "completion_rate": 0.0,
+      "trajectory_deviation": -0.7184601787448002,
+      "collisions": 0,
+      "near_misses": 0,
+      "reward": -35020.500050478506
+    },
+    "10_canyon_transit_456": {
+      "completion_rate": 0.0,
+      "trajectory_deviation": -0.7184601787448002,
+      "collisions": 0,
+      "near_misses": 0,
+      "reward": -35020.500050478506
+    },
+    "15_delivery_42": {
+      "completion_rate": 0.0,
+      "trajectory_deviation": -0.6455205753104335,
+      "collisions": 0,
+      "near_misses": 7,
+      "reward": -40654.30128526731
+    },
+    "15_delivery_123": {
+      "completion_rate": 0.0,
+      "trajectory_deviation": -0.6455205753104335,
+      "collisions": 0,
+      "near_misses": 7,
+      "reward": -40654.30128526731
+    },
+    "15_delivery_456": {
+      "completion_rate": 0.0,
+      "trajectory_deviation": -0.6455205753104335,
+      "collisions": 0,
+      "near_misses": 7,
+      "reward": -40654.30128526731
+    },
+    "15_surveillance_42": {
+      "completion_rate": 0.13333333333333333,
+      "trajectory_deviation": -0.16358194643841298,
+      "collisions": 0,
+      "near_misses": 1,
+      "reward": -22069.574258979326
+    },
+    "15_surveillance_123": {
+      "completion_rate": 0.13333333333333333,
+      "trajectory_deviation": -0.16358194643841298,
+      "collisions": 0,
+      "near_misses": 1,
+      "reward": -22069.574258979326
+    },
+    "15_surveillance_456": {
+      "completion_rate": 0.13333333333333333,
+      "trajectory_deviation": -0.16358194643841298,
+      "collisions": 0,
+      "near_misses": 1,
+      "reward": -22069.574258979326
+    },
+    "15_formation_42": {
+      "completion_rate": 0.0,
+      "trajectory_deviation": -0.5934641194839473,
+      "collisions": 0,
+      "near_misses": 0,
+      "reward": -39190.62289517747
+    },
+    "15_formation_123": {
+      "completion_rate": 0.0,
+      "trajectory_deviation": -0.5934641194839473,
+      "collisions": 0,
+      "near_misses": 0,
+      "reward": -39190.62289517747
+    },
+    "15_formation_456": {
+      "completion_rate": 0.0,
+      "trajectory_deviation": -0.5934641194839473,
+      "collisions": 0,
+      "near_misses": 0,
+      "reward": -39190.62289517747
+    },
+    "15_canyon_transit_42": {
+      "completion_rate": 0.0,
+      "trajectory_deviation": -0.7074785934050637,
+      "collisions": 0,
+      "near_misses": 0,
+      "reward": -51396.136666150596
+    },
+    "15_canyon_transit_123": {
+      "completion_rate": 0.0,
+      "trajectory_deviation": -0.7074785934050637,
+      "collisions": 0,
+      "near_misses": 0,
+      "reward": -51396.136666150596
+    },
+    "15_canyon_transit_456": {
+      "completion_rate": 0.0,
+      "trajectory_deviation": -0.7074785934050637,
+      "collisions": 0,
+      "near_misses": 0,
+      "reward": -51396.136666150596
+    },
+    "20_delivery_42": {
+      "completion_rate": 0.0,
+      "trajectory_deviation": -0.6397389303011048,
+      "collisions": 0,
+      "near_misses": 4,
+      "reward": -53349.548483606915
+    },
+    "20_delivery_123": {
+      "completion_rate": 0.0,
+      "trajectory_deviation": -0.6397389303011048,
+      "collisions": 0,
+      "near_misses": 4,
+      "reward": -53349.548483606915
+    },
+    "20_delivery_456": {
+      "completion_rate": 0.0,
+      "trajectory_deviation": -0.6397389303011048,
+      "collisions": 0,
+      "near_misses": 4,
+      "reward": -53349.548483606915
+    },
+    "20_surveillance_42": {
+      "completion_rate": 0.25,
+      "trajectory_deviation": -0.21873404280525754,
+      "collisions": 0,
+      "near_misses": 3,
+      "reward": -23250.296914825223
+    },
+    "20_surveillance_123": {
+      "completion_rate": 0.25,
+      "trajectory_deviation": -0.21873404280525754,
+      "collisions": 0,
+      "near_misses": 3,
+      "reward": -23250.296914825223
+    },
+    "20_surveillance_456": {
+      "completion_rate": 0.25,
+      "trajectory_deviation": -0.21873404280525754,
+      "collisions": 0,
+      "near_misses": 3,
+      "reward": -23250.296914825223
+    },
+    "20_formation_42": {
+      "completion_rate": 0.0,
+      "trajectory_deviation": -0.5875499261750798,
+      "collisions": 0,
+      "near_misses": 0,
+      "reward": -50317.47260350523
+    },
+    "20_formation_123": {
+      "completion_rate": 0.0,
+      "trajectory_deviation": -0.5875499261750798,
+      "collisions": 0,
+      "near_misses": 0,
+      "reward": -50317.47260350523
+    },
+    "20_formation_456": {
+      "completion_rate": 0.0,
+      "trajectory_deviation": -0.5875499261750798,
+      "collisions": 0,
+      "near_misses": 0,
+      "reward": -50317.47260350523
+    },
+    "20_canyon_transit_42": {
+      "completion_rate": 0.0,
+      "trajectory_deviation": -0.6824242253059996,
+      "collisions": 0,
+      "near_misses": 1,
+      "reward": -65931.04126302862
+    },
+    "20_canyon_transit_123": {
+      "completion_rate": 0.0,
+      "trajectory_deviation": -0.6824242253059996,
+      "collisions": 0,
+      "near_misses": 1,
+      "reward": -65931.04126302862
+    },
+    "20_canyon_transit_456": {
+      "completion_rate": 0.0,
+      "trajectory_deviation": -0.6824242253059996,
+      "collisions": 0,
+      "near_misses": 1,
+      "reward": -65931.04126302862
+    }
+  },
+  "cigrl": {
+    "5_delivery_42": {
+      "completion_rate": 0.0,
+      "trajectory_deviation": -0.6378764582390728,
+      "collisions": 0,
+      "near_misses": 0,
+      "reward": -12962.57399626487,
+      "packets": 4887
+    },
+    "5_delivery_123": {
+      "completion_rate": 0.0,
+      "trajectory_deviation": -0.6378764582390728,
+      "collisions": 0,
+      "near_misses": 0,
+      "reward": -12962.57399626487,
+      "packets": 4887
+    },
+    "5_delivery_456": {
+      "completion_rate": 0.0,
+      "trajectory_deviation": -0.6378764582390728,
+      "collisions": 0,
+      "near_misses": 0,
+      "reward": -12962.57399626487,
+      "packets": 4887
+    },
+    "5_surveillance_42": {
+      "completion_rate": 0.6,
+      "trajectory_deviation": 0.047941569683185394,
+      "collisions": 0,
+      "near_misses": 0,
+      "reward": -3407.799888241793,
+      "packets": 1903
+    },
+    "5_surveillance_123": {
+      "completion_rate": 0.6,
+      "trajectory_deviation": 0.047941569683185394,
+      "collisions": 0,
+      "near_misses": 0,
+      "reward": -3407.799888241793,
+      "packets": 1903
+    },
+    "5_surveillance_456": {
+      "completion_rate": 0.6,
+      "trajectory_deviation": 0.047941569683185394,
+      "collisions": 0,
+      "near_misses": 0,
+      "reward": -3407.799888241793,
+      "packets": 1903
+    },
+    "5_formation_42": {
+      "completion_rate": 0.0,
+      "trajectory_deviation": -0.7793484082976336,
+      "collisions": 0,
+      "near_misses": 0,
+      "reward": -13641.969157131763,
+      "packets": 4861
+    },
+    "5_formation_123": {
+      "completion_rate": 0.0,
+      "trajectory_deviation": -0.7793484082976336,
+      "collisions": 0,
+      "near_misses": 0,
+      "reward": -13641.969157131763,
+      "packets": 4861
+    },
+    "5_formation_456": {
+      "completion_rate": 0.0,
+      "trajectory_deviation": -0.7793484082976336,
+      "collisions": 0,
+      "near_misses": 0,
+      "reward": -13641.969157131763,
+      "packets": 4861
+    },
+    "5_canyon_transit_42": {
+      "completion_rate": 0.0,
+      "trajectory_deviation": -0.8331721384158923,
+      "collisions": 0,
+      "near_misses": 0,
+      "reward": -16900.013407304385,
+      "packets": 4857
+    },
+    "5_canyon_transit_123": {
+      "completion_rate": 0.0,
+      "trajectory_deviation": -0.8331721384158923,
+      "collisions": 0,
+      "near_misses": 0,
+      "reward": -16900.013407304385,
+      "packets": 4857
+    },
+    "5_canyon_transit_456": {
+      "completion_rate": 0.0,
+      "trajectory_deviation": -0.8331721384158923,
+      "collisions": 0,
+      "near_misses": 0,
+      "reward": -16900.013407304385,
+      "packets": 4857
+    },
+    "10_delivery_42": {
+      "completion_rate": 0.0,
+      "trajectory_deviation": -0.6014589434191029,
+      "collisions": 38,
+      "near_misses": 59,
+      "reward": -24427.339807956116,
+      "packets": 21962
+    },
+    "10_delivery_123": {
+      "completion_rate": 0.0,
+      "trajectory_deviation": -0.6014589434191029,
+      "collisions": 38,
+      "near_misses": 59,
+      "reward": -24427.339807956116,
+      "packets": 21962
+    },
+    "10_delivery_456": {
+      "completion_rate": 0.0,
+      "trajectory_deviation": -0.6014589434191029,
+      "collisions": 38,
+      "near_misses": 59,
+      "reward": -24427.339807956116,
+      "packets": 21962
+    },
+    "10_surveillance_42": {
+      "completion_rate": 0.5,
+      "trajectory_deviation": 0.13083692440184452,
+      "collisions": 0,
+      "near_misses": 0,
+      "reward": -7208.797017048726,
+      "packets": 8522
+    },
+    "10_surveillance_123": {
+      "completion_rate": 0.5,
+      "trajectory_deviation": 0.13083692440184452,
+      "collisions": 0,
+      "near_misses": 0,
+      "reward": -7208.797017048726,
+      "packets": 8522
+    },
+    "10_surveillance_456": {
+      "completion_rate": 0.5,
+      "trajectory_deviation": 0.13083692440184452,
+      "collisions": 0,
+      "near_misses": 0,
+      "reward": -7208.797017048726,
+      "packets": 8522
+    },
+    "10_formation_42": {
+      "completion_rate": 0.0,
+      "trajectory_deviation": -0.38933347558125775,
+      "collisions": 0,
+      "near_misses": 0,
+      "reward": -22014.252774940273,
+      "packets": 21923
+    },
+    "10_formation_123": {
+      "completion_rate": 0.0,
+      "trajectory_deviation": -0.38933347558125775,
+      "collisions": 0,
+      "near_misses": 0,
+      "reward": -22014.252774940273,
+      "packets": 21923
+    },
+    "10_formation_456": {
+      "completion_rate": 0.0,
+      "trajectory_deviation": -0.38933347558125775,
+      "collisions": 0,
+      "near_misses": 0,
+      "reward": -22014.252774940273,
+      "packets": 21923
+    },
+    "10_canyon_transit_42": {
+      "completion_rate": 0.0,
+      "trajectory_deviation": -0.6877536697035065,
+      "collisions": 0,
+      "near_misses": 0,
+      "reward": -32523.218540026555,
+      "packets": 22025
+    },
+    "10_canyon_transit_123": {
+      "completion_rate": 0.0,
+      "trajectory_deviation": -0.6877536697035065,
+      "collisions": 0,
+      "near_misses": 0,
+      "reward": -32523.218540026555,
+      "packets": 22025
+    },
+    "10_canyon_transit_456": {
+      "completion_rate": 0.0,
+      "trajectory_deviation": -0.6877536697035065,
+      "collisions": 0,
+      "near_misses": 0,
+      "reward": -32523.218540026555,
+      "packets": 22025
+    },
+    "15_delivery_42": {
+      "completion_rate": 0.0,
+      "trajectory_deviation": -0.5653226424458462,
+      "collisions": 53,
+      "near_misses": 201,
+      "reward": -35546.879657075966,
+      "packets": 51082
+    },
+    "15_delivery_123": {
+      "completion_rate": 0.0,
+      "trajectory_deviation": -0.5653226424458462,
+      "collisions": 53,
+      "near_misses": 201,
+      "reward": -35546.879657075966,
+      "packets": 51082
+    },
+    "15_delivery_456": {
+      "completion_rate": 0.0,
+      "trajectory_deviation": -0.5653226424458462,
+      "collisions": 53,
+      "near_misses": 201,
+      "reward": -35546.879657075966,
+      "packets": 51082
+    },
+    "15_surveillance_42": {
+      "completion_rate": 0.26666666666666666,
+      "trajectory_deviation": 0.06672813598487218,
+      "collisions": 0,
+      "near_misses": 3,
+      "reward": -14245.133127785024,
+      "packets": 20267
+    },
+    "15_surveillance_123": {
+      "completion_rate": 0.26666666666666666,
+      "trajectory_deviation": 0.06672813598487218,
+      "collisions": 0,
+      "near_misses": 3,
+      "reward": -14245.133127785024,
+      "packets": 20267
+    },
+    "15_surveillance_456": {
+      "completion_rate": 0.26666666666666666,
+      "trajectory_deviation": 0.06672813598487218,
+      "collisions": 0,
+      "near_misses": 3,
+      "reward": -14245.133127785024,
+      "packets": 20267
+    },
+    "15_formation_42": {
+      "completion_rate": 0.0,
+      "trajectory_deviation": -0.24122845321006678,
+      "collisions": 0,
+      "near_misses": 0,
+      "reward": -27701.91910238412,
+      "packets": 46772
+    },
+    "15_formation_123": {
+      "completion_rate": 0.0,
+      "trajectory_deviation": -0.24122845321006678,
+      "collisions": 0,
+      "near_misses": 0,
+      "reward": -27701.91910238412,
+      "packets": 46772
+    },
+    "15_formation_456": {
+      "completion_rate": 0.0,
+      "trajectory_deviation": -0.24122845321006678,
+      "collisions": 0,
+      "near_misses": 0,
+      "reward": -27701.91910238412,
+      "packets": 46772
+    },
+    "15_canyon_transit_42": {
+      "completion_rate": 0.0,
+      "trajectory_deviation": -0.4636691836555116,
+      "collisions": 0,
+      "near_misses": 13,
+      "reward": -41273.31729795194,
+      "packets": 51440
+    },
+    "15_canyon_transit_123": {
+      "completion_rate": 0.0,
+      "trajectory_deviation": -0.4636691836555116,
+      "collisions": 0,
+      "near_misses": 13,
+      "reward": -41273.31729795194,
+      "packets": 51440
+    },
+    "15_canyon_transit_456": {
+      "completion_rate": 0.0,
+      "trajectory_deviation": -0.4636691836555116,
+      "collisions": 0,
+      "near_misses": 13,
+      "reward": -41273.31729795194,
+      "packets": 51440
+    },
+    "20_delivery_42": {
+      "completion_rate": 0.0,
+      "trajectory_deviation": -0.48251276848305846,
+      "collisions": 14,
+      "near_misses": 54,
+      "reward": -44783.8791243641,
+      "packets": 92013
+    },
+    "20_delivery_123": {
+      "completion_rate": 0.0,
+      "trajectory_deviation": -0.48251276848305846,
+      "collisions": 14,
+      "near_misses": 54,
+      "reward": -44783.8791243641,
+      "packets": 92013
+    },
+    "20_delivery_456": {
+      "completion_rate": 0.0,
+      "trajectory_deviation": -0.48251276848305846,
+      "collisions": 14,
+      "near_misses": 54,
+      "reward": -44783.8791243641,
+      "packets": 92013
+    },
+    "20_surveillance_42": {
+      "completion_rate": 0.55,
+      "trajectory_deviation": 0.24343339882519635,
+      "collisions": 0,
+      "near_misses": 10,
+      "reward": -15228.548201126292,
+      "packets": 33600
+    },
+    "20_surveillance_123": {
+      "completion_rate": 0.55,
+      "trajectory_deviation": 0.24343339882519635,
+      "collisions": 0,
+      "near_misses": 10,
+      "reward": -15228.548201126292,
+      "packets": 33600
+    },
+    "20_surveillance_456": {
+      "completion_rate": 0.55,
+      "trajectory_deviation": 0.24343339882519635,
+      "collisions": 0,
+      "near_misses": 10,
+      "reward": -15228.548201126292,
+      "packets": 33600
+    },
+    "20_formation_42": {
+      "completion_rate": 0.0,
+      "trajectory_deviation": -0.2220958715650759,
+      "collisions": 0,
+      "near_misses": 0,
+      "reward": -35575.35704587813,
+      "packets": 73722
+    },
+    "20_formation_123": {
+      "completion_rate": 0.0,
+      "trajectory_deviation": -0.2220958715650759,
+      "collisions": 0,
+      "near_misses": 0,
+      "reward": -35575.35704587813,
+      "packets": 73722
+    },
+    "20_formation_456": {
+      "completion_rate": 0.0,
+      "trajectory_deviation": -0.2220958715650759,
+      "collisions": 0,
+      "near_misses": 0,
+      "reward": -35575.35704587813,
+      "packets": 73722
+    },
+    "20_canyon_transit_42": {
+      "completion_rate": 0.0,
+      "trajectory_deviation": -0.38073174878920807,
+      "collisions": 0,
+      "near_misses": 0,
+      "reward": -50049.427186395595,
+      "packets": 88350
+    },
+    "20_canyon_transit_123": {
+      "completion_rate": 0.0,
+      "trajectory_deviation": -0.38073174878920807,
+      "collisions": 0,
+      "near_misses": 0,
+      "reward": -50049.427186395595,
+      "packets": 88350
+    },
+    "20_canyon_transit_456": {
+      "completion_rate": 0.0,
+      "trajectory_deviation": -0.38073174878920807,
+      "collisions": 0,
+      "near_misses": 0,
+      "reward": -50049.427186395595,
+      "packets": 88350
+    }
+  }
+}

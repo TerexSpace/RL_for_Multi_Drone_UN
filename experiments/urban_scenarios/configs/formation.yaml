@@ -1,0 +1,59 @@
+# CIGRL Mission Configurations
+# Formation flight migration
+
+mission:
+  type: formation
+  name: "Swarm Formation Migration"
+  description: "Coordinated formation flight through urban environment"
+
+swarm:
+  num_drones: 12
+  formation_type: "hexagonal"
+  leader_follower: true
+  
+formation:
+  geometry:
+    type: hexagonal
+    spacing: 20  # meters
+    layers: 2
+  rigidity: 0.8  # How strictly to maintain formation
+  leader:
+    id: 0
+    visibility: all
+
+waypoints:
+  - position: [100, 100, 50]
+    formation: hexagonal
+  - position: [300, 400, 60]
+    formation: line
+  - position: [600, 300, 55]
+    formation: hexagonal
+  - position: [850, 800, 50]
+    formation: compact
+
+environment:
+  size: 1000
+  obstacles:
+    - center: [450, 350]
+      radius: 80
+      type: building_cluster
+  gps_denied_zones:
+    - bounds: [250, 200, 450, 450]
+      severity: 0.9
+    - bounds: [500, 500, 700, 700]
+      severity: 0.7
+
+control:
+  formation_control_gain: 1.5
+  obstacle_avoidance_gain: 2.0
+  neighbor_attraction: 0.8
+  
+safety:
+  min_separation: 5
+  max_formation_error: 10
+  emergency_scatter: true
+
+communication:
+  range: 100
+  topology: "mesh"
+  consensus_rounds: 3

@@ -1,0 +1,39 @@
+# CIGRL Inference Configuration
+
+inference:
+  model_path: "models/best_model.pt"
+  device: "auto"  # auto, cpu, cuda
+  control_rate: 20.0
+  max_speed: 5.0
+
+drone:
+  id: 0
+  num_drones: 5
+  comm_range: 150.0
+  safety_radius: 2.0
+
+localization:
+  fusion_rate: 100.0
+  gps_timeout: 2.0
+  use_cooperative: true
+
+communication:
+  broadcast_rate: 10.0
+  neighbor_timeout: 2.0
+  priority_messaging: true
+
+safety:
+  geofence:
+    x_min: 0
+    x_max: 1000
+    y_min: 0
+    y_max: 1000
+    z_min: 10
+    z_max: 200
+  collision_threshold: 2.0
+  near_miss_threshold: 5.0
+  enable_kill_switch: true
+
+ros2:
+  namespace: "drone_0"
+  use_sim_time: false

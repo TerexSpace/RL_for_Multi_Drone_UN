@@ -1,0 +1,7 @@
+{
+  "avg_localization_error": 3.336177355295631,
+  "max_localization_error": 19.806202834673968,
+  "avg_formation_error": 11.631774037079587,
+  "min_gps_quality": 0.030009634980714663,
+  "mission_complete": false
+}

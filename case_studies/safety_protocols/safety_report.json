@@ -1,0 +1,7 @@
+{
+  "total_geofence_violations": 0,
+  "total_collisions": 0,
+  "total_near_misses": 1,
+  "kill_switch_triggered": false,
+  "kill_switch_reason": ""
+}

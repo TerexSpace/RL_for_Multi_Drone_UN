@@ -1,0 +1,43 @@
+# CIGRL Python Dependencies
+
+# Core
+numpy>=1.24.0
+scipy>=1.10.0
+matplotlib>=3.7.0
+pandas>=2.0.0
+pyyaml>=6.0
+
+# Deep Learning
+torch>=2.0.0
+torchvision>=0.15.0
+
+# Reinforcement Learning
+gymnasium>=0.28.0
+stable-baselines3>=2.0.0
+
+# ROS2 Python
+# Note: These are typically installed via apt with ROS2
+# rclpy
+# geometry_msgs
+# sensor_msgs
+# nav_msgs
+
+# Simulation
+airsim>=1.8.1  # Optional: for AirSim integration
+
+# Utilities
+tqdm>=4.65.0
+tensorboard>=2.13.0
+wandb>=0.15.0
+python-dotenv>=1.0.0
+
+# Development
+pytest>=7.3.0
+black>=23.3.0
+flake8>=6.0.0
+mypy>=1.3.0
+
+# Documentation
+mkdocs>=1.4.0
+mkdocs-material>=9.1.0
+mkdocstrings>=0.22.0

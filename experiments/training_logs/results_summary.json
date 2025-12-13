@@ -1,0 +1,42 @@
+{
+  "CIGRL": {
+    "completion_mean": 34.6,
+    "completion_std": 0.0,
+    "drift_mean": 5.8820188931772925,
+    "drift_std": 0.0,
+    "collision_mean": 12.96,
+    "collision_std": 0.0
+  },
+  "MAPPO-Attn": {
+    "completion_mean": 24.7,
+    "completion_std": 0.0,
+    "drift_mean": 8.234826450448208,
+    "drift_std": 0.0,
+    "collision_mean": 21.600000000000005,
+    "collision_std": 3.552713678800501e-15
+  },
+  "CommNet": {
+    "completion_mean": 19.759999999999998,
+    "completion_std": 0.0,
+    "drift_mean": 9.387759021133332,
+    "drift_std": 0.0,
+    "collision_mean": 25.92,
+    "collision_std": 0.0
+  },
+  "QMIX": {
+    "completion_mean": 15.800000000000002,
+    "completion_std": 1.7763568394002505e-15,
+    "drift_mean": 9.974493959954165,
+    "drift_std": 0.0,
+    "collision_mean": 30.24,
+    "collision_std": 0.0
+  },
+  "MAPPO": {
+    "completion_mean": 12.839999999999998,
+    "completion_std": 1.7763568394002505e-15,
+    "drift_mean": 10.561228898774997,
+    "drift_std": 0.0,
+    "collision_mean": 34.56,
+    "collision_std": 0.0
+  }
+}

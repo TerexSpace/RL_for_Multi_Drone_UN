@@ -1,0 +1,67 @@
+# CIGRL Mission Configurations
+# Urban canyon transit
+
+mission:
+  type: canyon_transit
+  name: "GPS-Denied Urban Canyon Navigation"
+  description: "Transit through GPS-denied urban canyons with cooperative localization"
+
+swarm:
+  num_drones: 6
+  entry_formation: "column"
+  role_assignment:
+    - id: 0
+      role: "scout"
+    - id: 1
+      role: "relay"
+    - id: [2, 3, 4, 5]
+      role: "payload"
+
+canyon:
+  entry_point: [50, 500, 30]
+  exit_point: [950, 500, 30]
+  width: 40  # meters
+  segments:
+    - start: [50, 500]
+      end: [200, 500]
+      gps_quality: 0.6
+    - start: [200, 500]
+      end: [400, 480]
+      gps_quality: 0.1  # Complete denial
+    - start: [400, 480]
+      end: [600, 520]
+      gps_quality: 0.05  # Complete denial
+    - start: [600, 520]
+      end: [800, 500]
+      gps_quality: 0.15
+    - start: [800, 500]
+      end: [950, 500]
+      gps_quality: 0.7
+
+localization:
+  cooperative:
+    enabled: true
+    relay_positioning: true
+    ranging_accuracy: 0.5  # meters
+  fallback:
+    imu_only_timeout_s: 30
+    visual_odometry: true
+
+navigation:
+  speed_in_canyon: 3.0
+  speed_open: 6.0
+  wall_following:
+    enabled: true
+    distance: 15
+  recovery_behavior: "reverse_and_hold"
+
+safety:
+  min_altitude: 15
+  max_altitude: 60
+  wall_clearance: 10
+  emergency_ascent: true
+
+communication:
+  range: 80
+  relay_mode: true
+  mesh_recovery: true

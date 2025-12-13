@@ -1,0 +1,43 @@
+# CIGRL Mission Configurations
+# Surveillance scenario with sector-based coverage
+
+mission:
+  type: surveillance
+  name: "Urban Area Surveillance"
+  description: "Sector-based coverage with drone handovers"
+
+swarm:
+  num_drones: 10
+  initial_formation: "grid"
+  altitude_range: [40, 80]
+
+environment:
+  size: 1000
+  sectors:
+    x_divisions: 4
+    y_divisions: 3
+  gps_denied_zones:
+    - bounds: [200, 200, 400, 400]
+      severity: 0.8
+    - bounds: [600, 100, 800, 300]
+      severity: 0.7
+
+objectives:
+  coverage_threshold: 0.95
+  revisit_interval_s: 120
+  handover:
+    enabled: true
+    overlap_distance: 50
+
+safety:
+  min_separation: 10
+  geofence:
+    x: [0, 1000]
+    y: [0, 1000]
+    z: [10, 200]
+  max_speed: 8.0
+
+communication:
+  range: 150
+  update_rate_hz: 2
+  failure_prob: 0.05
