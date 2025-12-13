@@ -1,0 +1,96 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cigrl"
+version = "0.1.0"
+description = "Covariance-Integrated Graph Reinforcement Learning for Multi-Drone Urban Navigation"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+authors = [
+    {name = "Ayan Kemel", email = "ayan.kemel@example.com"},
+    {name = "Luigi La Spada"},
+    {name = "Almas Ospanov", email = "a.ospanov@astanait.edu.kz"},
+]
+keywords = [
+    "multi-agent reinforcement learning",
+    "drone navigation",
+    "graph neural networks",
+    "sensor fusion",
+    "ROS2",
+    "GPS-denied navigation",
+    "cooperative localization",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Scientific/Engineering :: Robotics",
+]
+dependencies = [
+    "numpy>=1.24.0",
+    "scipy>=1.10.0",
+    "matplotlib>=3.7.0",
+    "torch>=2.0.0",
+    "gymnasium>=0.28.0",
+    "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.3.0",
+    "pytest-cov>=4.0.0",
+    "black>=23.3.0",
+    "flake8>=6.0.0",
+    "mypy>=1.3.0",
+]
+docs = [
+    "mkdocs>=1.4.0",
+    "mkdocs-material>=9.1.0",
+    "mkdocstrings>=0.22.0",
+]
+ros2 = [
+    # ROS2 packages installed via apt, not pip
+    # rclpy, geometry_msgs, sensor_msgs, nav_msgs
+]
+simulation = [
+    "airsim>=1.8.1",
+    "stable-baselines3>=2.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/TerexSpace/RL_for_Multi_Drone_UN"
+Documentation = "https://github.com/TerexSpace/RL_for_Multi_Drone_UN#readme"
+Repository = "https://github.com/TerexSpace/RL_for_Multi_Drone_UN.git"
+Issues = "https://github.com/TerexSpace/RL_for_Multi_Drone_UN/issues"
+
+[project.scripts]
+cigrl-train = "cigrl.scripts.train:main"
+cigrl-evaluate = "cigrl.scripts.evaluate:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["cigrl*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "-v --tb=short"
+
+[tool.black]
+line-length = 100
+target-version = ["py310", "py311", "py312"]
+
+[tool.mypy]
+python_version = "3.10"
+warn_return_any = true
+warn_unused_configs = true
+ignore_missing_imports = true

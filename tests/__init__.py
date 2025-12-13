@@ -1,1 +1,1 @@
-# CIGRL Tests Package
+"""CIGRL Test Suite."""

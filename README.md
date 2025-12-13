@@ -1,122 +1,174 @@
-# CIGRL: Covariance-driven Intelligent Graph Reinforcement Learning
+# CIGRL: Covariance-Integrated Graph Reinforcement Learning
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![ROS2 Humble](https://img.shields.io/badge/ROS2-Humble-blue)](https://docs.ros.org/en/humble/)
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10+-blue.svg)](https://python.org)
+[![Tests](https://github.com/TerexSpace/RL_for_Multi_Drone_UN/actions/workflows/ci.yml/badge.svg)](https://github.com/TerexSpace/RL_for_Multi_Drone_UN/actions)
 
 **Multi-Drone Urban Navigation with Attention-based Cooperative Sensing**
 
-CIGRL is a reinforcement learning framework for coordinated multi-drone navigation in GPS-challenged urban environments. It features:
+CIGRL is a Python framework for coordinated multi-drone navigation in GPS-challenged urban environments. When GPS signals degrade, drones share localization covariance matrices through attention-weighted graph neural networks, enabling robust cooperative position estimation.
 
-- 🤖 **Multi-Agent PPO** with attention-based communication
-- 📡 **Cooperative localization** in GPS-denied zones
-- 🏙️ **Urban environment** simulation with GNSS degradation
-- 🔄 **ROS2 integration** for real-world deployment
+## Features
 
-## Quick Start
+- 🤖 **Multi-Agent PPO** with covariance-weighted attention communication
+- 📡 **Adaptive Extended Kalman Filter** with online bias estimation
+- 🏙️ **Urban environment simulation** with configurable GPS-denied zones
+- 🔄 **ROS2 Humble integration** for real-world deployment
 
-### Installation
+## Installation
+
+### Quick Install (Python only)
 
 ```bash
 # Clone repository
-git clone https://github.com/<user>/CIGRL.git
-cd CIGRL
+git clone https://github.com/TerexSpace/RL_for_Multi_Drone_UN.git
+cd RL_for_Multi_Drone_UN
 
-# Docker (recommended)
-docker build -t cigrl:latest -f docker/Dockerfile .
-docker run -it --gpus all cigrl:latest
+# Install package
+pip install -e .
 
-# Or local installation
-pip install -r requirements.txt
-cd ros2_ws && colcon build
+# Or with development dependencies
+pip install -e ".[dev]"
 ```
 
-### Run Simulation
+### Docker (Recommended for full stack)
 
 ```bash
-# Python simulation
-python experiments/cigrl_enhanced_simulation.py
+docker build -t cigrl:latest -f docker/Dockerfile .
+docker run -it --gpus all cigrl:latest
+```
 
-# ROS2 launch
-source ros2_ws/install/setup.bash
+### ROS2 Installation
+
+```bash
+# Prerequisites: ROS2 Humble installed
+# See: https://docs.ros.org/en/humble/Installation.html
+
+# Install ROS2 dependencies
+cd ros2_ws
+rosdep install --from-paths src --ignore-src -r -y
+
+# Build
+colcon build --symlink-install
+source install/setup.bash
+```
+
+## Quick Start
+
+### Minimal Example (No ROS2 Required)
+
+```python
+from cigrl import DroneSwarm, UrbanEnvironment, CIGRLPolicy
+
+# Create environment with GPS-denied zones
+env = UrbanEnvironment(
+    size=1000,  # 1km x 1km
+    n_buildings=30,
+    gps_denied_zones=[(500, 500, 100)]  # center_x, center_y, radius
+)
+
+# Initialize swarm
+swarm = DroneSwarm(n_drones=5, env=env)
+
+# Load pretrained policy
+policy = CIGRLPolicy.load("models/surveillance_5drones.pt")
+
+# Run episode
+obs = swarm.reset()
+for step in range(1000):
+    actions = policy.select_actions(obs)
+    obs, rewards, dones, info = swarm.step(actions)
+    if all(dones):
+        break
+
+print(f"Mission completion: {info['completion_rate']:.1%}")
+```
+
+### ROS2 Simulation
+
+```bash
+# Launch 5-drone swarm
 ros2 launch cigrl_core cigrl_swarm.launch.py num_drones:=5
+
+# In another terminal: monitor status
+ros2 topic echo /swarm/status
 ```
 
 ### Training
 
 ```bash
-python scripts/train.py --config configs/training.yaml
+# Train new policy
+python -m cigrl.scripts.train --config configs/training.yaml --num-drones 5
+
+# Evaluate trained policy
+python -m cigrl.scripts.evaluate --model models/my_policy.pt
 ```
 
 ## Architecture
 
 ```
-CIGRL/
-├── ros2_ws/src/
-│   ├── cigrl_core/           # Core ROS2 packages
-│   │   ├── policy_node/      # RL policy inference
-│   │   ├── sensor_fusion/    # EKF localization
-│   │   ├── communication/    # Inter-drone messaging
-│   │   └── mission_planner/  # Task allocation
-│   └── cigrl_sim/            # Simulation bridges
-├── experiments/              # Experimental scenarios
-├── case_studies/             # Validation case studies
-├── models/                   # Pretrained weights
+cigrl/
+├── cigrl/                    # Python package
+│   ├── core/                 # Core algorithms
+│   │   ├── attention.py      # Covariance-weighted attention
+│   │   ├── policy.py         # MAPPO policy network
+│   │   └── sensor_fusion.py  # Adaptive EKF
+│   ├── envs/                 # Simulation environments
+│   │   ├── urban.py          # Urban canyon simulation
+│   │   └── drone.py          # Drone dynamics
+│   └── scripts/              # CLI tools
+├── ros2_ws/src/cigrl_core/   # ROS2 packages
+├── tests/                    # Test suite
 ├── configs/                  # Configuration files
-└── docs/                     # Documentation
+└── models/                   # Pretrained weights
 ```
 
-## Key Features
+## Key Components
 
-### 1. Attention-Based Cooperative Sensing
+### Covariance-Weighted Attention
 
-When GPS quality degrades, drones share position estimates with neighbors. An attention mechanism weighs neighbor information based on their GPS confidence:
+When GPS quality degrades, drones share position estimates weighted by localization confidence:
 
 ```python
-# Simplified attention computation
-weights = softmax([neighbor.gps_quality ** 2 for neighbor in neighbors])
-fused_position = sum(w * n.position for w, n in zip(weights, neighbors))
+# Attention weights incorporate uncertainty
+alpha_ij = softmax(
+    dot(W_q @ h_i, W_k @ h_j) / sqrt(d)
+    - lambda * trace(Sigma_j)  # Penalize uncertain neighbors
+)
 ```
 
-### 2. Multi-Mission Support
+### Adaptive Extended Kalman Filter
 
-| Mission Type   | Description                          |
-| -------------- | ------------------------------------ |
-| Surveillance   | Sector-based coverage with handovers |
-| Delivery       | Route deconfliction with priority    |
-| Formation      | Dynamic formation control            |
-| Canyon Transit | GPS-denied corridor navigation       |
+The sensor fusion module monitors innovation statistics and adjusts measurement noise:
 
-### 3. Comprehensive Metrics
+```python
+from cigrl.core.sensor_fusion import AdaptiveEKF
 
-- Mission completion rate
-- Trajectory deviation
-- Localization drift
-- Collision/near-miss rates
-- Communication efficiency
-
-## Experiments
-
-Run the full experimental suite:
-
-```bash
-python experiments/cigrl_enhanced_simulation.py
+ekf = AdaptiveEKF(
+    state_dim=15,  # pos, vel, attitude, accel_bias, gyro_bias
+    gps_noise_nominal=0.5,
+    adaptation_rate=0.1
+)
 ```
 
-Results are saved to `experiments/deep_evaluation_results.json`.
+## Mission Types
 
-## Case Studies
+| Mission        | Description                    | Command                  |
+| -------------- | ------------------------------ | ------------------------ |
+| Surveillance   | Sector coverage with handovers | `--mission surveillance` |
+| Delivery       | Multi-point routing            | `--mission delivery`     |
+| Formation      | V-formation flight             | `--mission formation`    |
+| Canyon Transit | GPS-denied corridor            | `--mission canyon`       |
 
-### Urban Delivery
+## Testing
 
 ```bash
-python case_studies/urban_delivery/scenario.py
-```
+# Run all tests
+pytest tests/ -v
 
-### GPS-Denied Navigation
-
-```bash
-python case_studies/gps_denied_navigation/relay_node_protocol.py
+# With coverage
+pytest tests/ --cov=cigrl --cov-report=html
 ```
 
 ## Citation
@@ -134,12 +186,20 @@ If you use CIGRL in your research, please cite:
 }
 ```
 
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on:
+
+- Reporting issues
+- Submitting pull requests
+- Code style requirements
+
 ## License
 
-This project is licensed under the MIT License - see [LICENSE](LICENSE) for details.
+MIT License - see [LICENSE](LICENSE) for details.
 
 ## Acknowledgments
 
 - ROS2 Humble Hawksbill
 - PyTorch for deep learning
-- AirSim/Gazebo for simulation
+- OpenAI Gym / Gymnasium for RL interfaces
