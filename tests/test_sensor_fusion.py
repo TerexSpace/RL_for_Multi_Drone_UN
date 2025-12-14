@@ -71,20 +71,23 @@ class TestEKFUpdate:
         """Test covariance decreases after GPS update."""
         from cigrl.core.sensor_fusion import AdaptiveEKF
         
-        ekf = AdaptiveEKF()
+        ekf = AdaptiveEKF(nis_threshold=100.0)  # High threshold to avoid rejection
         state = ekf.initialize()
         
-        # Build up significant uncertainty
-        for _ in range(50):
+        # Build up uncertainty with predictions
+        for _ in range(20):
             state = ekf.predict(state, accel=[0, 0, -9.81], gyro=[0, 0, 0], dt=0.1)
         
         trace_before = np.trace(state.covariance[:3, :3])
-        state, accepted = ekf.update_gps(state, gps_position=[0, 0, 0], gps_quality=1.0)
+        
+        # Use GPS measurement close to current position to avoid NIS rejection
+        gps_pos = state.position + np.random.randn(3) * 0.1
+        state, accepted = ekf.update_gps(state, gps_position=gps_pos, gps_quality=1.0)
         trace_after = np.trace(state.covariance[:3, :3])
         
-        # GPS update should reduce uncertainty (or maintain if already converged)
-        assert accepted, "GPS update should be accepted"
-        assert trace_after <= trace_before * 1.01  # Allow 1% tolerance
+        # GPS update should reduce uncertainty
+        assert accepted, "GPS update should be accepted with high NIS threshold"
+        assert trace_after <= trace_before, "GPS update should reduce covariance"
 
     def test_low_gps_quality_increases_noise(self):
         """Test that low GPS quality leads to less correction."""
