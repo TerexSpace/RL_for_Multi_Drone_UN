@@ -28,6 +28,7 @@ affiliations:
     index: 3
 date: 13 December 2024
 bibliography: paper.bib
+doi: 10.5281/zenodo.17926274
 ---
 
 # Summary
